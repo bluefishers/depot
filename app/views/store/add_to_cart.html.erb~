@@ -14,12 +14,4 @@
 </tr>
 </table>
 
-
-<h2>your cart</h2>
-<ul>
-<% @cart.items.each do |item|%>
-<li><%= item.quantity %> &times; <%= item.title %></li>
-<% end %>
-</ul>
-
 <%= button_to 'Empty cart', :action => :empty_cart %>
