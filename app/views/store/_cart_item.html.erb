@@ -1,4 +1,8 @@
-<tr>
+<% if item == @current_item %>
+	<tr id = "current_item">
+<%  else %>
+  <tr>
+<% end %>
 	<td><%= item.quantity %>&times;</td>
 	<td><%= item.title %></td>
 	<td class="item-price"><%= number_to_currency(item.price) %></td>

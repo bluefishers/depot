@@ -8,7 +8,7 @@ class StoreController < ApplicationController
 	  logger.debug "debug----------begin"
   	product = Product.find(params[:id])
   	@cart = find_cart
-  	@cart.add_product(product)
+  	@current_item = @cart.add_product(product)
   	#redirect_to_index nil
 	  logger.debug "debug----------end"
   	
@@ -27,7 +27,7 @@ class StoreController < ApplicationController
   
   def empty_cart
   	session[:cart] = nil
-  	redirect_to_index "your cart is currently empty"
+  	redirect_to_index nil
   end
   
   private

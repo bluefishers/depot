@@ -1,1 +1,3 @@
-$("#cart").html("<%= j (render 'cart' ) %>")
+$("#cart").html("<%= j (render 'cart', :cart=>:cart) %>")
+$("#cart").slideDown("slow") if @cart.total_items == 1
+$("#current_item").css({'color':'red'}).animate({'color':"white"}, 1500)
